@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba Envío Correo LIS</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+  <h2>Enviar constancia de préstamo</h2>
+
+  <form id="loanForm">
+    <input type="text" id="student_name" placeholder="Nombre estudiante" required><br><br>
+    <input type="text" id="student_document" placeholder="Documento" required><br><br>
+    <input type="email" id="student_email" placeholder="Correo destinatario" required><br><br>
+    <input type="text" id="student_phone" placeholder="WhatsApp" required><br><br>
+
+    <input type="date" id="loan_start" placeholder="Fecha préstamo" required><br><br>
+    <input type="date" id="loan_due" placeholder="Fecha devolución" required><br><br>
+
+    <input type="text" id="items" placeholder="Objeto prestado" required><br><br>
+    <input type="text" id="items_codes" placeholder="Cantidad" required><br><br>
+    <input type="text" id="items_location" placeholder="Ubicación" required><br><br>
+
+    <input type="text" id="staff_name" placeholder="Auxiliar que presta" required><br><br>
+    <input type="text" id="evidence_reference" placeholder="Foto evidencia" required><br><br>
+
+    <button type="submit">Enviar correo</button>
+  </form>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
