@@ -1,0 +1,136 @@
+<form id="overdueForm">
+
+<input id="student_name" placeholder="Nombre estudiante" required><br><br>
+<input id="student_document" placeholder="Documento" required><br><br>
+<input id="items" placeholder="Objeto(s)" required><br><br>
+<input id="items_codes" placeholder="Códigos" required><br><br>
+
+<label>Fecha límite devolución:</label><br>
+<input type="date" id="due_date" required><br><br>
+
+<input id="student_email" type="email" placeholder="Correo destinatario" required><br><br>
+
+<button type="submit">Enviar aviso vencido</button>
+
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+<!--Codifo en emailJS----------------------------------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Actualización de préstamo – LIS</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family: Arial, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4; padding:20px 0;">
+    <tr>
+      <td align="center">
+
+        <table width="700" cellpadding="0" cellspacing="0" style="background:#ffffff; padding:30px; border-radius:8px;">
+          
+          <tr>
+            <td>
+              <h2 style="color:#1d3557;">Actualización de préstamo – LIS</h2>
+
+              <p>Cordial saludo,</p>
+
+              <p>
+                Atendiendo a su solicitud, le informamos que el tiempo de préstamo del ítem ha sido ampliado:
+              </p>
+
+              <!-- Caja de información -->
+              <table width="100%" cellpadding="8" cellspacing="0" 
+                     style="margin-top:20px; border:1px solid #ddd; border-radius:6px; background:#fafafa;">
+                
+                <tr>
+                  <td colspan="2" style="font-weight:bold; padding:12px; background:#eeeeee;">
+                    Actualización
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="35%"><strong>Estudiante</strong></td>
+                  <td>{{student_full_name}} ({{student_document}})</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Objeto(s)</strong></td>
+                  <td>
+                    {{items_list}}<br>
+                    Código(s): {{items_codes}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong>Fecha inicial de préstamo</strong></td>
+                  <td>{{loan_start_date}}</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Fecha anterior de devolución</strong></td>
+                  <td>{{previous_due_date}}</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Nueva fecha de devolución</strong></td>
+                  <td style="color:#0b6e4f; font-weight:bold;">
+                    {{new_due_date}}
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong>Motivo / observación</strong></td>
+                  <td>{{extension_reason}}</td>
+                </tr>
+
+                <tr>
+                  <td><strong>Auxiliar que aprueba</strong></td>
+                  <td>{{staff_full_name}}</td>
+                </tr>
+
+              </table>
+
+              <p style="margin-top:20px;">
+                Recuerde que es importante cumplir con esta nueva fecha.
+              </p>
+
+              <p>
+                Quedamos atentos a cualquier comentario.
+              </p>
+
+              <!-- FOOTER INSTITUCIONAL -->
+              <hr style="margin:30px 0; border:none; border-top:1px solid #ddd;">
+
+              <table width="100%" cellpadding="10" cellspacing="0">
+                <tr>
+                  <td width="40%" style="background:#0b6e4f; color:white; padding:20px; border-radius:8px 0 0 8px;">
+                    <h3 style="margin:0;">UNIVERSIDAD DE ANTIOQUIA</h3>
+                    <p style="margin:5px 0 0 0;">Facultad de Ingeniería</p>
+                  </td>
+                  <td width="60%" style="padding-left:20px; font-size:14px; color:#333;">
+                    <strong>Monitor LIS</strong><br>
+                    Laboratorio Integrado de Sistemas<br>
+                    Departamento de Ingeniería de Sistemas<br>
+                    (604) 2195532<br>
+                    Dirección: Calle 67 #53-108, Salón 18-210, Medellín<br>
+                    lis.udea.edu.co<br>
+                    sistemas.udea.edu.co
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
